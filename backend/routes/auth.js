@@ -53,6 +53,7 @@ router.post('/register', async (req, res) => {
 // @route   POST api/auth/login
 // @desc    Authenticate user & get token
 // @access  Public
+// TODO: Add separate route for password reset request
 router.post('/login', async (req, res) => {
     const { email, password } = req.body;
 
