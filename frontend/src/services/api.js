@@ -11,7 +11,10 @@ const api = axios.create({
     }
 });
 
-// Add auth token to requests
+/**
+ * Request interceptor to inject JWT token into headers.
+ * Ensures all API calls are authenticated if a token exists.
+ */
 api.interceptors.request.use(config => {
     const token = localStorage.getItem('token');
     if (token) {
