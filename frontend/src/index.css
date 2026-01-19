@@ -15,3 +15,5 @@ body {
   background-color: var(--color-dream-dark);
   color: #f8fafc;
 }
+
+/* TODO: Verify breakpoint consistency on mobile devices */
