@@ -6,6 +6,12 @@ import React, { useEffect, useState } from 'react';
 import api from '../services/api';
 import { Link } from 'react-router-dom';
 
+/**
+ * Dashboard Component
+ * 
+ * Fetches and displays the user's dream history using a responsive grid layout.
+ * Visualizes AI tag metadata (Lucidity, Emotions, Symbols).
+ */
 const Dashboard = () => {
     const [dreams, setDreams] = useState([]);
 
