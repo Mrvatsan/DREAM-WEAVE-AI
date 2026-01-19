@@ -6,6 +6,12 @@ import React, { useState } from 'react';
 import api from '../services/api';
 import { useNavigate } from 'react-router-dom';
 
+/**
+ * DreamLog Component
+ * 
+ * Provides interface for users to input dream narrative via text or Speech-to-Text.
+ * Handles submission to backend for AI analysis.
+ */
 const DreamLog = () => {
     const [text, setText] = useState('');
     const [loading, setLoading] = useState(false);
