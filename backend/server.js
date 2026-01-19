@@ -15,6 +15,7 @@ const app = express();
 // Application Middleware
 app.use(cors());
 app.use(express.json());
+// TODO: Implement rate limiting for production
 
 // Database Connection
 mongoose.connect(process.env.MONGO_URI)
