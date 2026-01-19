@@ -1,0 +1,17 @@
+/**
+ * Global Styles
+ * Tailwind CSS imports and custom theme configuration.
+ */
+@import "tailwindcss";
+
+@theme {
+  --color-dream-dark: #0f172a;
+  --color-dream-main: #1e293b;
+  --color-dream-accent: #6366f1;
+  --color-dream-highlight: #8b5cf6;
+}
+
+body {
+  background-color: var(--color-dream-dark);
+  color: #f8fafc;
+}
