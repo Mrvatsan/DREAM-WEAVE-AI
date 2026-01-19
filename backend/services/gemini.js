@@ -10,6 +10,12 @@ require('dotenv').config();
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || 'API_KEY_MISSING');
 const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
+/**
+ * Analyzes dream text using Gemini AI to extract symbols, emotions, and narrative structure.
+ * 
+ * @param {string} dreamText - The raw description of the dream.
+ * @returns {Promise<Object>} JSON object containing symbols, emotions, characters, arc, and lucidScore.
+ */
 async function analyzeDream(dreamText) {
     try {
         const prompt = `
