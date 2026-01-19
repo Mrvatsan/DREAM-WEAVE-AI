@@ -14,6 +14,7 @@ const DreamSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
+    // TODO: Add geo-tagging support
     rawText: {
         type: String,
         required: true
