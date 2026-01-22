@@ -3,6 +3,10 @@
  * Handles client-side routing and protected route logic.
  */
 import React from 'react';
+/**
+ * Main App Component
+ * Handles routing and global layout structure.
+ */
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 // Page Components
