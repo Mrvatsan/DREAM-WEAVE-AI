@@ -26,6 +26,7 @@ const UserSchema = new mongoose.Schema({
 });
 
 // Hash password before saving
+// Refactored to use async/await to prevent 'next is not a function' error
 UserSchema.pre('save', async function () {
     if (!this.isModified('password')) return;
     const salt = await bcrypt.genSalt(10);
