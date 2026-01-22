@@ -13,7 +13,9 @@ const api = axios.create({
 
 /**
  * Request interceptor to inject JWT token into headers.
+ * Request interceptor to inject JWT token into headers.
  * Ensures all API calls are authenticated if a token exists.
+ * Manually attach 'x-auth-token' for backend compatibility.
  */
 api.interceptors.request.use(config => {
     const token = localStorage.getItem('token');
