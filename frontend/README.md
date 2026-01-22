@@ -18,3 +18,4 @@ React PWA built with Vite and Tailwind CSS (v4), featuring a "Mystical" aestheti
 - **Voice Input**: Uses Web Speech API for dream logging.
 - **DreamLog**: Main interface for text/voice entry.
 - **Dashboard**: Visual history of dreams and AI tags.
+- **Story Bridge**: Interactive modal for dream continuation suggestions.
