@@ -16,6 +16,7 @@ const DreamLog = () => {
     const [text, setText] = useState('');
     const [loading, setLoading] = useState(false);
     const [isListening, setIsListening] = useState(false);
+    // State to hold the story bridge suggestion from AI
     const [continuation, setContinuation] = useState(null);
     const navigate = useNavigate();
 
