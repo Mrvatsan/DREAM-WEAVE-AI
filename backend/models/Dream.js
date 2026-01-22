@@ -40,6 +40,9 @@ const DreamSchema = new mongoose.Schema({
         min: 0,
         max: 100
     },
+    continuation: {
+        type: String
+    },
     narrativeThreadId: {
         type: mongoose.Schema.Types.ObjectId, // For linking to continuity chains
         ref: 'NarrativeThread'
