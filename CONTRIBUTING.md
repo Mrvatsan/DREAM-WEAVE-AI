@@ -12,3 +12,6 @@ We welcome contributions! Please follow these guidelines:
 - Use **ES6+** syntax.
 - Follow **Tailwind CSS** utility patterns.
 - Ensure **JSDoc** comments are present for new functions.
+
+## Dream Continuity
+When working on the Dream Continuity feature, ensure prompts remain open-ended and avoid specific plot prescriptions.
