@@ -41,7 +41,8 @@ const DreamSchema = new mongoose.Schema({
         max: 100
     },
     continuation: {
-        type: String
+        type: String,
+        description: "AI-generated suggestion for the next dream segment"
     },
     narrativeThreadId: {
         type: mongoose.Schema.Types.ObjectId, // For linking to continuity chains
