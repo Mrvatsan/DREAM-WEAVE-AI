@@ -16,6 +16,7 @@ const DreamLog = () => {
     const [text, setText] = useState('');
     const [loading, setLoading] = useState(false);
     const [isListening, setIsListening] = useState(false);
+    const [continuation, setContinuation] = useState(null);
     const navigate = useNavigate();
 
     const startListening = () => {
@@ -56,10 +57,14 @@ const DreamLog = () => {
 
         setLoading(true);
         try {
-            // Allow user to see analysis in console for now or handle response
+            // Store response to show continuation
             const res = await api.post('/dreams', { rawText: text });
             console.log('Analysis:', res.data);
-            navigate('/dashboard');
+            if (res.data.continuation) {
+                setContinuation(res.data.continuation);
+            } else {
+                navigate('/dashboard');
+            }
         } catch (err) {
             console.error(err);
             alert('Failed to log dream. Check console.');
@@ -117,8 +122,42 @@ const DreamLog = () => {
                         {loading ? 'Analyzing Neural Patterns...' : 'Weave Dream'}
                     </button>
                 </form>
+
             </div>
-        </div>
+
+            {/* Continuation Modal */}
+            {
+                continuation && (
+                    <div className="fixed inset-0 bg-black/80 flex items-center justify-center p-4 z-50">
+                        <div className="bg-slate-900 border border-violet-500 rounded-2xl p-8 max-w-lg w-full shadow-2xl relative animate-fadeIn">
+                            <h2 className="text-2xl font-bold text-violet-400 mb-4 flex items-center gap-2">
+                                <span>✨</span> Story Bridge
+                            </h2>
+                            <p className="text-slate-300 text-lg leading-relaxed mb-8 italic">
+                                "{continuation}"
+                            </p>
+                            <div className="flex gap-4">
+                                <button
+                                    onClick={() => navigate('/dashboard')}
+                                    className="flex-1 py-3 px-6 bg-slate-800 hover:bg-slate-700 rounded-xl text-slate-300 transition-colors font-medium"
+                                >
+                                    Close
+                                </button>
+                                <button
+                                    onClick={() => {
+                                        navigator.clipboard.writeText(continuation);
+                                        alert('Copied to clipboard!');
+                                    }}
+                                    className="flex-1 py-3 px-6 bg-violet-600 hover:bg-violet-500 rounded-xl text-white transition-colors font-bold"
+                                >
+                                    Copy for Tonight
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                )
+            }
+        </div >
     );
 };
 
