@@ -11,6 +11,7 @@ const { analyzeDream } = require('../services/gemini');
 // @route   POST api/dreams
 // @desc    Log a new dream
 // @access  Private
+// Integrates with Gemini AI for dream analysis
 router.post('/', auth, async (req, res) => {
     try {
         const { rawText } = req.body;
