@@ -28,6 +28,7 @@ async function analyzeDream(dreamText) {
       3. characters: Array of objects {name: string, role: string}
       4. arc: Object {beginning: string, climax: string, unresolved: string, end: string}
       5. lucidScore: Number (0-100) estimating potential to have become lucid
+      6. continuation: String (A creative, open-ended prompt or scenario for the user to visualize tonight to continue this dream's story)
 
       Return JSON ONLY. No markdown formatting.
     `;
@@ -48,7 +49,8 @@ async function analyzeDream(dreamText) {
             emotions: [],
             characters: [],
             arc: {},
-            lucidScore: 0
+            lucidScore: 0,
+            continuation: "The dream haze clears, revealing a path you missed before. Tonight, return to this place and look for the hidden door..."
         };
     }
 }
