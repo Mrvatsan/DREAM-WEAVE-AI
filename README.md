@@ -14,4 +14,5 @@ To create a "Dream Continuity Engine" that doesn't just interpret dreams but act
 ## ✨ Key Features
 - **Dream Logging**: Voice-to-Text and Text input.
 - **AI Analysis**: Automatic extraction of symbols, emotions, and lucid potential.
+- **Dream Continuity**: Generates "Story Bridge" suggestions for the next dream.
 - **Privacy First**: Personalized secure profile.
