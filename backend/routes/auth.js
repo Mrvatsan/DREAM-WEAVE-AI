@@ -14,6 +14,7 @@ const auth = require('../middleware/auth');
 // @access  Public
 router.post('/register', async (req, res) => {
     const { name, email, password } = req.body;
+    // TODO: Add express-validator for robust input validation
 
     try {
         let user = await User.findOne({ email });
