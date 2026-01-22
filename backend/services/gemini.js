@@ -50,6 +50,7 @@ async function analyzeDream(dreamText) {
             characters: [],
             arc: {},
             lucidScore: 0,
+            // Fallback continuation if API fails or returns 404
             continuation: "The dream haze clears, revealing a path you missed before. Tonight, return to this place and look for the hidden door..."
         };
     }
