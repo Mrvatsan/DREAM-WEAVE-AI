@@ -20,7 +20,7 @@ app.use(express.json());
 // Database Connection
 mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log('MongoDB connected'))
-    .catch(err => console.error('MongoDB connection error:', err));
+    .catch(err => console.error('MongoDB connection error:', err)); // Ensure IP whitelist if using Atlas
 
 // Routes
 app.use('/api/auth', require('./routes/auth'));
